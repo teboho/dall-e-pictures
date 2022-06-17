@@ -5,6 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Dall E Sample Pictures</title>
+   <link rel="icon" type="image/svg+xml" href="https://openai.com/assets/images/favicon.svg?v=b3fc96a4d2">
    <style>
       body {
          background: linear-gradient(to right, red, orange) ;
@@ -16,22 +17,29 @@
    </style>
 </head>
 <body>
-   <h1>Photos from Open AI's Dall~E 2 Sample Generations</h1>
+   <h1>Photos from Open AI's Dall~E 2 Sample Generations <br>Updating every hald-second</h1>
    <h1></h1>
    <img src="" alt="Dall E Picture" id="image" class="image">
+   <img src="" alt="Dall E Picture" id="image2" class="image2">
    <script>
       let src = "https://cdn.openai.com/dall-e-2/assets/heroes/";
       let image = document.getElementById('image');
+      let image2 = document.getElementById('image2');
       let h1 = document.getElementsByTagName('h1')[1];
 
       let i = 0;
+      let j = 120;
 
       setInterval(() => {
-         if (i == 113) 
+         if (i == 121) 
             i = 0;
+
+         if (j == -1)
+            j = 120;
 
          h1.innerText = i;
          image.setAttribute("src", src + i++ + ".jpg")
+         image2.setAttribute("src", src + j-- + ".jpg")
       }, 500);
    </script>
 </body>
